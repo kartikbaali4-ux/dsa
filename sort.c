@@ -25,6 +25,23 @@ int bubbleSort(int arr[],int size){
     }
     return 0;
 }
+int inseration_Sort(int arr[],int size){
+    
+    for (int i=1; i<size; i++)
+    {
+        int curr = i;
+        int prev = i - 1;
+
+            while (prev >= 0 && arr[prev] > curr)
+            {
+                arr[prev + 1] = arr[prev];
+                prev--;
+            }
+            
+        arr[prev + 1] = curr;
+    }
+    return 0;
+}
 int main(){
 
     int arr[5] = {5,4,3,2,1};
@@ -32,8 +49,22 @@ int main(){
 
     printf("Unsorted Array: ");
     traversal(arr,size);
-    bubbleSort(arr,size);
-    printf("\nSorted Array: ");
-    traversal(arr,size);    
+    // bubbleSort(arr,size);
+    // printf("\nSorted Array by bubble : ");
+    // traversal(arr,size);    
+    
+
+// Inserstion Sort 
+
+// Insertion Sort is a sorting algorithm that builds a sorted array one element at a time.
+//  It takes each element and inserts it into its correct position among the previously sorted elements.
+//  Ex: Think of playing cards 
+
+// code:-
+
+    printf("\nSort by Inseration sort: ");
+    inseration_Sort(arr,size);
+    traversal(arr,size);
+
     return 0;
 }
